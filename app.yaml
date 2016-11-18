@@ -1,0 +1,17 @@
+application: earthquake-visualizer
+
+# Version 1.0 (Alpha 2)
+version: 1-0
+api_version: 1
+runtime: python27
+threadsafe: true
+
+handlers:
+# Static website
+- url: /
+  static_files: static/index.html
+  upload: index\.html
+  secure: always
+- url: /
+  static_dir: static
+  secure: always
