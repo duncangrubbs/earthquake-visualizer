@@ -13,12 +13,14 @@
   }
   paper-input {
     margin: 8px;
+    width: 15vw;
     --paper-input-container-color: #FFF;
     --paper-input-container-focus-color: #F44336;
     --paper-input-container-invalid-color: #FFEB3B;
     --paper-input-container-input-color: #FFF;
   }
   paper-button {
+    width: 8vw;
     background: #F44336;
   }
   #loading {
@@ -52,21 +54,14 @@
     height: 30px;
   }
   @media screen and (max-width: 978px) {
-    #items-right {
-      align-self: flex-start;
-    }
-    #by-line, #title, #logo, span {
+    #logo {
       display: none;
     }
-    input {
-      width: 15vw;
+    paper-input {
+      width: 40vw;
     }
-    button {
-      width: 10vw;
-      border-radius: 5vw;
-    }
-    span {
-      font-size: 16px;
+    paper-button {
+      width: 6vw;
     }
   }
 </style>

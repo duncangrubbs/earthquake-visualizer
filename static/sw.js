@@ -19,9 +19,8 @@ const PRECACHE_URLS = [
   './offline.html',
   './index.html',
   './res/favicon.png',
-  './res/search.png',
   './res/loading.gif',
-  './style.css',
+  './styles.html',
   './app.js',
   'https://fonts.googleapis.com/css?family=Roboto'
 ];

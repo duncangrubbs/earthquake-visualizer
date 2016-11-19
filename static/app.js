@@ -4,7 +4,7 @@ if(!navigator.onLine){
   location.href = '/offline.html';
 };
 
-if (!window.indexedDB) {
+if (!window.localStorage) {
   console.log('Your browser does not support indexedDB');
 };
 
@@ -28,15 +28,29 @@ if ('serviceWorker' in navigator) {
 };
 
 $query.addEventListener('click', function() {
-  getLocation();
+  let lat;
+  let long;
+  if(localStorage.getItem('lat')) {
+    console.log('IN storage');
+    lat = localStorage.getItem('lat');
+    long = localStorage.getItem('long');
+    lat = parseFloat(lat);
+    long = parseFloat(long);
+    query(lat, long);
+  } else {
+    console.log('Out of storage');
+    getLocation(lat, long);
+  }
   $loading.style.display = 'flex';
 });
 
-function getLocation() {
+function getLocation(lat, long) {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(position => {
       let lat = position.coords.latitude;
       let long = position.coords.longitude;
+      localStorage.setItem('lat', lat);
+      localStorage.setItem('long', long);
       query(lat, long)
     });
   } else {
@@ -112,7 +126,7 @@ function createMap(data, lat, long, radius) {
       map: map,
       center: coords,
       position: new google.maps.LatLng(data.features[i].geometry.coordinates[1], data.features[i].geometry.coordinates[0]),
-      radius: 4.5 ** data.features[i].properties.mag
+      radius: 4 ** data.features[i].properties.mag
     });
     circle.addListener('click', function() {
       infowindow.setPosition(coords);
