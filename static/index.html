@@ -24,30 +24,29 @@
     <meta name="apple-mobile-web-app-title" content="Earthquake Visualizer">
     <link rel="apple-touch-icon-precomposed" href="./res/favicon.png">
 
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/webcomponentsjs/webcomponents-lite.js">
+
+    <link rel="import" href="/bower_components/paper-input/paper-input.html">
+    <link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="/bower_components/iron-icon/iron-icon.html">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="import" href="./styles.html">
   </head>
 
   <body>
 
-    <div id="nav">
-      <div id="items-left">
-        <img id ="logo" src="./res/favicon.png" />
-        <span id="nav-text">
-          <span id="title"><b>Earthquake Visualizer</b></span>
-          <span id="by-line">By Duncan Grubbs</span>
-          </span>
-      </div>
-      <div id="items-right">
-        <span>Mag:</span>
-        <input id="mag" type="text" placeholder="Mag.">
-        <span>Time:</span>
-        <input id="years" type="text" placeholder="Time">
-        <span>Radius:</span>
-        <input id="radius" type="text" placeholder="Radius">
-        <button id="query"><img id="search" src="./res/search.png" /></button>
-      </div>
-    </div>
+    <paper-toolbar>
+      <iron-icon icon="trending-up"></iron-icon>
+      <span class="title">Earthquake Visualizer</span>
+      <paper-input id="mag" label="Mag"></paper-input>
+      <paper-input id="years" label="Years"></paper-input>
+      <paper-input id="radius" label="Radius"></paper-input>
+      <paper-button id="query"><iron-icon icon="search"></iron-icon></paper-button>
+    </paper-toolbar>
 
     <div id="loading"><img src="./res/loading.gif"/></div>
     <div id="map"></div>

@@ -9,7 +9,6 @@ if (!window.indexedDB) {
 };
 
 //Declare Constants
-const $gradient = document.getElementById('gradient');
 const $map = document.getElementById('map');
 const $mag = document.getElementById('mag');
 const $radius = document.getElementById('radius');
@@ -105,15 +104,15 @@ function createMap(data, lat, long, radius) {
       content: `Date: ${formattedDate}<br>Status: ${status}<br>Magnitude: ${mag}`
     });
     let circle = new google.maps.Circle({
-      strokeColor: '#F44336',
+      strokeColor: '#009688',
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: '#F44336',
-      fillOpacity: 0.35,
+      fillColor: '#009688',
+      fillOpacity: 0.6,
       map: map,
       center: coords,
       position: new google.maps.LatLng(data.features[i].geometry.coordinates[1], data.features[i].geometry.coordinates[0]),
-      radius: 4 ** data.features[i].properties.mag
+      radius: 4.5 ** data.features[i].properties.mag
     });
     circle.addListener('click', function() {
       infowindow.setPosition(coords);
