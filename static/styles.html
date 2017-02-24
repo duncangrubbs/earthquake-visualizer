@@ -13,7 +13,7 @@
   }
   paper-input {
     margin: 8px;
-    width: 15vw;
+    max-width: 200px;
     --paper-input-container-color: #FFF;
     --paper-input-container-focus-color: #F44336;
     --paper-input-container-invalid-color: #FFEB3B;
@@ -53,6 +53,11 @@
     width: 30px;
     height: 30px;
   }
+  #menu-title {
+    padding: 0;
+    margin: 0;
+    color: #FFF;
+  }
   @media screen and (max-width: 978px) {
     #logo {
       display: none;
@@ -64,4 +69,30 @@
       width: 6vw;
     }
   }
+
+  #paperDrawerPanel [main] {
+      text-align: center;
+      background-color: var(--google-grey-100);
+    }
+    #paperDrawerPanel [drawer] {
+      border-right: 1px solid var(--google-grey-300);
+      background: #009688;
+    }
+    #paperDrawerPanel[right-drawer] [drawer] {
+      border-left: 1px solid var(--google-grey-300);
+    }
+    paper-button {
+      color: white;
+      margin: 10px;
+      background-color: var(--google-red-500);
+      white-space: nowrap;
+    }
+    button {
+      display: block;
+      line-height: 40px;
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      margin: 20px;
+    }
 </style>

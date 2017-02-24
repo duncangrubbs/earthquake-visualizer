@@ -62,6 +62,7 @@ function query(lat, long) {
   let mag = $mag.value;
   let years = $years.value;
   let radius = $radius.value;
+  console.log(radius);
 
   const startTime = (currentDate.getFullYear() - years) + '-' +
    currentDate.getMonth() + '-' + currentDate.getDay();

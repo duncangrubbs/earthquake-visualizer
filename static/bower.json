@@ -1,0 +1,23 @@
+{
+  "name": "visualizer",
+  "homepage": "https://github.com/duncangrubbs/earthquake-visualizer",
+  "authors": [
+    "Duncan Grubbs <duncan.grubbs@gmail.com>"
+  ],
+  "description": "An earthquake visualizer.",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-icons": "^1.2.0",
+    "paper-elements": "^1.0.7",
+    "polymer": "Polymer#^1.7.1",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#^1.0.11"
+  }
+}
