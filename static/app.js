@@ -62,18 +62,16 @@ function query(lat, long) {
   let mag = $mag.value;
   let years = $years.value;
   let radius = $radius.value;
-  console.log(radius);
 
-  const startTime = (currentDate.getFullYear() - years) + '-' +
-   currentDate.getMonth() + '-' + currentDate.getDay();
+  const startTime = `${(currentDate.getFullYear() - years)}-${currentDate.getMonth()}-${currentDate.getDate()}`;
 
-  const endTime = currentDate.getFullYear() + '-' +
-   (currentDate.getMonth()) + '-' + currentDate.getDay();
+  const endTime = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`;
 
   let url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&';
   let finalURL =
-  `${url}maxradius=${radius}&minmagnitude=${mag}
-  &latitude=${lat}&longitude=${long}&starttime=${startTime}&endtime=${endTime}`;
+  `${url}maxradius=${radius}&minmagnitude=${mag}&latitude=${lat}&longitude=${long}&starttime=${startTime}&endtime=${endTime}`;
+
+  console.log(finalURL);
 
   fetch(finalURL, { method: 'GET' })
     .then(resp => {
