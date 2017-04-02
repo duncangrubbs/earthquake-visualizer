@@ -29,14 +29,14 @@ $query.addEventListener('click', function () {
   let lat;
   let long;
   if (localStorage.getItem('lat')) {
-    console.log('IN storage');
+    console.log('[LOCATION] In Storage');
     lat = localStorage.getItem('lat');
     long = localStorage.getItem('long');
     lat = parseFloat(lat);
     long = parseFloat(long);
     query(lat, long);
   } else {
-    console.log('Out of storage');
+    console.log('[LOCATION] Out of storage');
     getLocation();
   }
 
@@ -70,9 +70,7 @@ function query(lat, long) {
    (currentDate.getMonth()) + '-' + currentDate.getDay();
 
   let url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&';
-  let finalURL =
-  `${url}maxradius=${radius}&minmagnitude=${mag}
-  &latitude=${lat}&longitude=${long}&starttime=${startTime}&endtime=${endTime}`;
+  let finalURL = `${url}maxradius=${radius}&minmagnitude=${mag}&latitude=${lat}&longitude=${long}&starttime=${startTime}&endtime=${endTime}`;
 
   fetch(finalURL, { method: 'GET' })
     .then(resp => {
