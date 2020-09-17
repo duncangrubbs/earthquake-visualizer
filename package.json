@@ -18,5 +18,8 @@
   "homepage": "https://github.com/duncangrubbs/earthquake-visualizer#readme",
   "dependencies": {
     "eslint-config-airbnb": "^14.1.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^14.1.0"
   }
 }

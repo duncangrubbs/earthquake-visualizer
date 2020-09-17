@@ -4,25 +4,44 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-    <title>Visualizer</title>
-
-    <meta name="author" content="Duncan Grubbs">
-    <meta name="name" content="Earthquake Visualizer">
-    <link rel="icon" href="./res/favicon.png">
-
-    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="./res/favicon.png">
     <meta name="theme-color" content="#009688">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#009688">
-    <meta name="apple-mobile-web-app-title" content="Earthquake Visualizer">
-    <link rel="apple-touch-icon-precomposed" href="./res/favicon.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Duncan Grubbs">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileColor" content="#009688">
+
+    <meta name="description" content="Earthquake Visualizer.">
+    <meta name="keywords" content="HTML, CSS, Web, Javascript">
+    <meta name="author" content="Duncan Grubbs">
+
+    <title>Duncan Grubbs</title>
+
+    <link rel="icon" href="/res/favicon.png">
+    <link rel="shortcut icon" href="res/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+  
+    <link rel="canonical" href="http://duncangrubbs.github.io" />
+
+    <!-- Schema for Google search -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "headline": "Earthquake Visualizer.",
+        "url": "https://earthquake-visualizer.appspot.com",
+        "image": [
+        "https://earthquake-visualizer.appspot.com/static/res/favicon.png"
+        ]
+      }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" media="all" disabled="false">
 
     <link rel="import" href="../bower_components/polymer/polymer.html">
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
@@ -36,8 +55,6 @@
     <link rel="import" href="/bower_components/paper-progress/paper-progress.html">
     <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="/bower_components/iron-icon/iron-icon.html">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="import" href="./styles.html">
   </head>
 
@@ -48,7 +65,7 @@
         <paper-input id="mag" label="Mag"></paper-input>
         <paper-input id="years" label="Years"></paper-input>
         <paper-input id="radius" label="Radius"></paper-input>
-        <paper-button id="query"><iron-icon icon="search"></iron-icon></paper-button>
+        <paper-button id="query" paper-drawer-toggle><iron-icon icon="search"></iron-icon></paper-button>
         <!--<paper-button paper-drawer-toggle>Close drawer</paper-button>-->
       </div>
       <div main>
@@ -59,6 +76,7 @@
           </div>
         </paper-toolbar>
       </div>
+      djflsdkjfksldjfgdslk
       <div class="content">
         <div id="map"></div>
       </div>
